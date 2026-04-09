@@ -1,3 +1,24 @@
+// MOBILE MENU
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileOverlay');
+  const hamburger = document.getElementById('hamburger');
+  if (!menu || !overlay || !hamburger) return;
+  const isOpen = menu.classList.contains('active');
+  menu.classList.toggle('active', !isOpen);
+  overlay.classList.toggle('active', !isOpen);
+  hamburger.classList.toggle('open', !isOpen);
+  document.body.style.overflow = isOpen ? '' : 'hidden';
+}
+
+// Close menu on escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const menu = document.getElementById('mobileMenu');
+    if (menu && menu.classList.contains('active')) toggleMenu();
+  }
+});
+
 // COOKIE BANNER
 function dismissCookie() {
   document.getElementById('cookie-banner').classList.remove('show');
