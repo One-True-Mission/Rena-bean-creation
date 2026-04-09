@@ -152,10 +152,12 @@
       position: absolute; bottom: 1.2rem; right: 1.8rem;
       font-family: 'Cormorant Garamond', serif;
       font-size: 5rem; font-weight: 300;
-      color: rgba(59,31,63,0.06); line-height: 1;
-      pointer-events: none; transition: color 0.3s;
+      color: var(--plum);
+      opacity: 0.2;
+      line-height: 1;
+      pointer-events: none; transition: opacity 0.3s;
     }
-    .value-item:hover .value-num { color: rgba(59,31,63,0.1); }
+    .value-item:hover .value-num { opacity: 0.45; }
     .value-item h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.5rem; font-weight: 400;
