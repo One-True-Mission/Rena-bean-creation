@@ -271,8 +271,35 @@ nav {
   box-shadow: 0 2px 16px var(--plum-glow);
 }
 .btn-primary:hover { background: var(--plum-light); transform: translateY(-2px); }
-.btn-ghost {
-  color: var(--text-muted);
+.btn-shop-pill {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid var(--gold);
+  color: var(--plum);
+  padding: 0.55rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn-shop-pill:hover {
+  background: rgba(201,168,76,0.22);
+  transform: translateY(-2px);
+}
+.nav-shop {
+  color: var(--gold) !important;
+  font-weight: 500 !important;
+  border: 1px solid var(--border-gold);
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s !important;
+}
+.nav-shop:hover {
+  background: rgba(201,168,76,0.1);
+  color: var(--plum) !important;
+}
   padding: 0.85rem 2.2rem;
   border-radius: 2px;
   font-size: 0.82rem; font-weight: 400;
@@ -482,12 +509,16 @@ section { padding: 6rem 4rem; }
 .service-card-number {
   position: absolute; bottom: 1.2rem; right: 1.8rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 5rem; font-weight: 300;
+  font-size: 4rem; font-weight: 300;
   color: rgba(59,31,63,0.06);
   line-height: 1; pointer-events: none;
   transition: color 0.3s;
+  overflow: hidden;
+  max-width: 100%;
+  z-index: 0;
 }
 .service-item:hover .service-card-number { color: rgba(59,31,63,0.1); }
+.service-item .work-link { position: relative; z-index: 1; }
 
 /* QUILTER'S CHOICE CALLOUT */
 .callout-strip {
