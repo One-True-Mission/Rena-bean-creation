@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rena Bean Creations | Longarm Quilting &amp; Memory Quilts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Back to Top -->
+  <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Floating CTA -->
+  <a href="#contact" id="float-contact">Let's Create</a>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner">
+    <p>This site uses cookies to improve your experience. By continuing, you agree to our use of cookies.</p>
+    <div class="cookie-btns">
+      <button class="cookie-decline" onclick="dismissCookie()">Decline</button>
+      <button class="cookie-accept" onclick="dismissCookie()">Accept</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="#" class="nav-logo">
+      <img src="assets/rbc-logo.png" alt="Rena Bean Creations" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
+      <span id="logo-fallback" style="display:none;">Rena Bean <span>Creations</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#work">Gallery</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-bg-text">RBC</div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Longarm Quilting &amp; Memory Quilts</div>
+      <h1 class="hero-title">
+        Stitched with<br>
+        <span class="outline">Love &amp; Precision</span><br>
+        <span class="plum">Always.<span class="hero-accent"></span></span>
+      </h1>
+      <p class="hero-sub">
+        Hand-finished quilts for the stories you carry in fabric.
+        Rena Bean Creations brings your quilt tops to life with expert longarm finishing, 
+        memory quilts, and t-shirt keepsakes. Mail-in welcome nationwide.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="#contact" class="btn-ghost">Get a Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">3+</div>
+          <div class="stat-label">Years Serving Quilters</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5.0 ★</div>
+          <div class="stat-label">Client Rated</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Mail-In Friendly</div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero headshot -->
+    <div class="hero-image-wrap">
+      <div class="hero-image-frame">
+        <img src="assets/rena-headshot.jpg" alt="Rena Hernandez" class="hero-headshot" onerror="this.parentElement.classList.add('no-photo')">
+        <div class="hero-image-badge">
+          <span class="badge-icon">🧵</span>
+          <span class="badge-text">Brock, Texas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="marquee-dot"></span>Longarm Quilting</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Memory Quilts</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>T-Shirt Quilts</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Mail-In Nationwide</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Quilter's Choice Available</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Fast Turnaround</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Trim and Bind-Ready</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Brock, Texas</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Longarm Quilting</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Memory Quilts</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>T-Shirt Quilts</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Mail-In Nationwide</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Quilter's Choice Available</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Fast Turnaround</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Trim and Bind-Ready</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Brock, Texas</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-label reveal">What I Do</div>
+    <h2 class="section-title reveal reveal-delay-1">Services Built for<br>Every Quilter</h2>
+    <p class="section-sub reveal reveal-delay-2">Whether you are finishing a beloved quilt top or preserving precious memories in fabric, Rena Bean Creations offers handcrafted services tailored to you.</p>
+
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <div class="service-icon">🪡</div>
+        <div class="service-tag">Most Popular</div>
+        <h3>Longarm Quilting</h3>
+        <p>Professional longarm finishing for your quilt tops. Bring your fabrics to life with Rena's expert eye for design and thread color. Quilter's Choice always welcome.</p>
+        <a href="#contact" class="work-link">Get a Quote
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <div class="service-card-number">01</div>
+      </div>
+      <div class="service-item reveal reveal-delay-1">
+        <div class="service-icon">🧸</div>
+        <div class="service-tag">Heirloom Quality</div>
+        <h3>Memory Quilts</h3>
+        <p>Transform cherished clothing and fabrics into a timeless memory quilt. Perfect for preserving a loved one's legacy or celebrating life's most meaningful milestones.</p>
+        <a href="#contact" class="work-link">Learn More
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <div class="service-card-number">02</div>
+      </div>
+      <div class="service-item reveal reveal-delay-2">
+        <div class="service-icon">👕</div>
+        <div class="service-tag">Fan Favorite</div>
+        <h3>T-Shirt Memory Quilts</h3>
+        <p>Those concert tees, team jerseys, and college shirts deserve more than a drawer. Let Rena craft them into a quilt you will treasure and display forever.</p>
+        <a href="#contact" class="work-link">Start Yours
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <div class="service-card-number">03</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUILTER'S CHOICE CALLOUT -->
+  <div class="callout-strip reveal">
+    <div class="callout-inner">
+      <div class="callout-icon">✦</div>
+      <div class="callout-text">
+        <strong>What is Quilter's Choice?</strong>
+        Not sure which design or thread color to pick? Leave it to Rena. Her clients trust her eye for color and design so completely that they simply say "Quilter's Choice" and have never been disappointed.
+      </div>
+      <a href="#contact" class="btn-primary">Try Quilter's Choice</a>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="section-label reveal">How It Works</div>
+    <h2 class="section-title reveal reveal-delay-1">Simple<br>Process</h2>
+    <p class="section-sub reveal reveal-delay-2">Sending your quilt across the country can feel daunting. Here is exactly what working with Rena looks like from start to finish.</p>
+
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="process-step-num">01</div>
+        <div class="process-step-tag">Get Started</div>
+        <h3>Reach Out</h3>
+        <p>Fill out the contact form or send a message. Tell Rena about your quilt top, your fabric, and what you are envisioning. She will respond quickly with a plan and a price.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-step-num">02</div>
+        <div class="process-step-tag">Ship It</div>
+        <h3>Mail Your Quilt</h3>
+        <p>Pack your quilt top and backing and ship it to Brock, Texas. USPS small prepaid boxes work perfectly and keep shipping affordable. Rena will confirm when it arrives.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-step-num">03</div>
+        <div class="process-step-tag">We Create</div>
+        <h3>Rena Gets to Work</h3>
+        <p>Your quilt is finished with expert longarm craftsmanship. Every stitch placed with intention. When complete it is trimmed and ready to bind so it arrives in your hands ready to use.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-step-num">04</div>
+        <div class="process-step-tag">Done</div>
+        <h3>Shipped Back to You</h3>
+        <p>Your finished quilt is carefully packed and shipped back. Clients across the country keep coming back because the result speaks for itself every single time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="about-inner">
+      <div class="about-image-wrap reveal">
+        <div class="about-image-frame">
+          <img src="assets/rena-headshot.jpg" alt="Rena Hernandez" class="about-photo" onerror="this.parentElement.classList.add('no-photo')">
+        </div>
+        <div class="about-image-accent"></div>
+      </div>
+      <div class="about-content reveal reveal-delay-1">
+        <div class="section-label">About Rena</div>
+        <h2 class="section-title">Crafting Creativity<br>&amp; Community Care</h2>
+        <p class="about-p">Meet Rena Hernandez, a passionate quilt artist based in Brock, Texas, whose creative spirit weaves intricate stories through every piece of fabric she touches.</p>
+        <p class="about-p">With a sharp eye for color, design, and detail, Rena transforms ordinary quilt tops into extraordinary masterpieces. Her clients ship from across the country and keep coming back because the result is simply better than anything they can find locally.</p>
+        <p class="about-p">When you trust Rena with your fabric, you are trusting someone who treats every quilt like it is her own.</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat-num">3+</span>
+            <span class="about-stat-label">Years in Business</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">★★★★★</span>
+            <span class="about-stat-label">Every Review</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">100%</span>
+            <span class="about-stat-label">Mail-In Accepted</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary">Work With Rena</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY / LATEST WORK -->
+  <section id="work">
+    <div class="section-label reveal">Latest Creations</div>
+    <h2 class="section-title reveal reveal-delay-1">Recent<br>Work</h2>
+    <p class="section-sub reveal reveal-delay-2">Every quilt tells a story. Here is a look at some of Rena's most recent finished pieces. Follow on Instagram for the latest updates.</p>
+
+    <div class="gallery-grid reveal reveal-delay-2">
+      <div class="gallery-card">
+        <div class="gallery-thumb gallery-thumb-1"></div>
+        <div class="gallery-label">Longarm Finish</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-thumb gallery-thumb-2"></div>
+        <div class="gallery-label">Memory Quilt</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-thumb gallery-thumb-3"></div>
+        <div class="gallery-label">T-Shirt Quilt</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-thumb gallery-thumb-4"></div>
+        <div class="gallery-label">Custom Design</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-thumb gallery-thumb-5"></div>
+        <div class="gallery-label">Longarm Finish</div>
+      </div>
+      <div class="gallery-card gallery-card-cta">
+        <a href="https://www.instagram.com/renabeancreations/" target="_blank" class="gallery-ig-link">
+          <span class="gallery-ig-icon">📸</span>
+          <span>Follow on Instagram</span>
+          <span class="gallery-ig-handle">@renabeancreations</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop" class="shop-section">
+    <div class="section-label reveal">The Shop</div>
+    <h2 class="section-title reveal reveal-delay-1">Gifts for Every<br>Sewist</h2>
+    <p class="section-sub reveal reveal-delay-2">Browse our collection of novelty tees made for the quilter in your life. Perfect gifts for every occasion.</p>
+
+    <div class="shop-grid">
+      <div class="shop-card reveal">
+        <div class="shop-img-wrap">
+          <img src="assets/tee-sewciopath.jpg" alt="I AM A Sewciopath Tee" onerror="this.parentElement.classList.add('no-img')">
+        </div>
+        <div class="shop-card-info">
+          <h3>I AM A Sewciopath</h3>
+          <span class="shop-price">$14.99</span>
+        </div>
+        <a href="#contact" class="work-link">Order Now
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+      <div class="shop-card reveal reveal-delay-1">
+        <div class="shop-img-wrap">
+          <img src="assets/tee-sew-heart.jpg" alt="I Sew a Piece of My Heart Tee" onerror="this.parentElement.classList.add('no-img')">
+        </div>
+        <div class="shop-card-info">
+          <h3>I Sew a Piece of My Heart</h3>
+          <span class="shop-price">$14.99</span>
+        </div>
+        <a href="#contact" class="work-link">Order Now
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+      <div class="shop-card reveal reveal-delay-2">
+        <div class="shop-img-wrap">
+          <img src="assets/tee-forget.jpg" alt="I Sew And Forget Things Tee" onerror="this.parentElement.classList.add('no-img')">
+        </div>
+        <div class="shop-card-info">
+          <h3>I Sew And Forget Things</h3>
+          <span class="shop-price">$14.99</span>
+        </div>
+        <a href="#contact" class="work-link">Order Now
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="shop-note reveal">
+      <p>To place a shop order, use the contact form below and mention which item you would like. Rena will follow up with payment and shipping details.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS CAROUSEL -->
+  <section id="reviews" class="reviews-section">
+    <div class="section-label reveal">Client Love</div>
+    <h2 class="section-title reveal reveal-delay-1">What Quilters<br>Are Saying</h2>
+
+    <div class="carousel-wrap reveal">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Her attention to detail and quality workmanship had me shipping my quilts to her even after she moved to Texas. She is just better than anyone I could find locally, and faster too. I have never been disappointed in her work. Ever."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">LO</div>
+            <div>
+              <div class="author-name">LeeAnn Olson</div>
+              <div class="author-detail">Longarm Client</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"I have been using Rena Bean Creations for almost three years. Every quilt, wall hanging, and table runner has turned out beautiful. I always choose Quilter's Choice and have never once been disappointed with the result."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">CS</div>
+            <div>
+              <div class="author-name">Carrie Suggett</div>
+              <div class="author-detail">Longarm Client, 3 Years</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Rena's talent is out of this world. You can tell she took her time and paid attention to every detail of my beautiful quilt. Gorgeous work and worth every single penny."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">RC</div>
+            <div>
+              <div class="author-name">Rachel Casamassa</div>
+              <div class="author-detail">Memory Quilt Client</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <div class="carousel-dots" id="carouselDots">
+          <button class="carousel-dot active" onclick="goTo(0)"></button>
+          <button class="carousel-dot" onclick="goTo(1)"></button>
+          <button class="carousel-dot" onclick="goTo(2)"></button>
+        </div>
+        <div class="carousel-btns">
+          <button class="carousel-btn" onclick="carouselPrev()">&#8592;</button>
+          <button class="carousel-btn" onclick="carouselNext()">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASS WAITLIST -->
+  <div class="waitlist-strip reveal">
+    <div class="waitlist-inner">
+      <div class="waitlist-content">
+        <div class="waitlist-label">Coming Soon</div>
+        <h3>Quilting Classes with Rena</h3>
+        <p>Join the waitlist and be the first to know when Rena opens registration for her next quilting class.</p>
+      </div>
+      <form class="waitlist-form" id="waitlistForm" onsubmit="submitWaitlist(event)">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Join Waitlist</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq-section">
+    <div class="section-label reveal">Questions</div>
+    <h2 class="section-title reveal reveal-delay-1">FAQ</h2>
+    <div class="faq-list reveal reveal-delay-2">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you accept mail-in quilts from out of state?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, absolutely. Rena works with clients nationwide. USPS small prepaid boxes are a great affordable option for shipping quilt tops and backings. Rena will confirm receipt when your package arrives and keep you updated throughout the process.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is Quilter's Choice?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Quilter's Choice means you leave the design and thread color decisions to Rena. She has such a strong eye for what works with each unique quilt that many long-time clients choose this option every single time and have never been disappointed with the result.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How long does it take to get my quilt back?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Turnaround time varies based on current demand. Rena is known for fast turnaround and will give you an honest timeline estimate when you reach out. Many clients are pleasantly surprised by how quickly their quilt comes back.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Will my quilt be ready to bind when I receive it?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Rena trims every quilt before shipping it back so when it arrives in your hands it is ready to bind. No extra steps needed on your end.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What do I need to send with my quilt?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Send your finished quilt top and backing fabric. Batting can be discussed when you reach out since Rena can advise on the best options for your specific project. Include a note with your name, contact information, and any preferences or special instructions.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you also sell novelty t-shirts?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Rena carries a small collection of quilting-themed novelty tees starting at $14.99. To order, use the contact form and let Rena know which shirt you are interested in. She will follow up with payment and shipping details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter-strip reveal">
+    <div class="newsletter-inner">
+      <div class="newsletter-content">
+        <div class="section-label" style="margin-bottom:0.6rem;">Stay Connected</div>
+        <h3>Monthly Comfort in Stitches</h3>
+        <p>Quilting tips, new creations, and community warmth delivered to your inbox once a month.</p>
+      </div>
+      <form class="newsletter-form" id="newsletterForm" onsubmit="submitNewsletter(event)">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="section-label reveal">Get in Touch</div>
+    <h2 class="section-title reveal reveal-delay-1">Let's Start Your<br>Project.</h2>
+    <div class="contact-inner">
+      <div class="contact-info reveal">
+        <p>Tell Rena about your quilt, your fabric, and your vision. She will get back to you quickly with a plan and a price. No pressure, no runaround.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <span>Brock, Texas. Mail-in welcome nationwide.</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📸</div>
+          <span>@renabeancreations on Instagram</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">◷</div>
+          <span>Fast response. Usually within one business day.</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOURFORMID" method="POST">
+          <div class="form-row">
+            <div class="form-field">
+              <label>First Name</label>
+              <input type="text" name="first_name" placeholder="Jane" required>
+            </div>
+            <div class="form-field">
+              <label>Last Name</label>
+              <input type="text" name="last_name" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="jane@email.com" required>
+            </div>
+            <div class="form-field">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="(555) 000-0000">
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Service Interested In</label>
+            <select name="service">
+              <option value="">Select a service...</option>
+              <option>Longarm Quilting</option>
+              <option>Memory Quilt</option>
+              <option>T-Shirt Memory Quilt</option>
+              <option>Novelty T-Shirt Order</option>
+              <option>Class Waitlist</option>
+              <option>General Question</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Tell Me About Your Project</label>
+            <textarea rows="4" name="project_details" placeholder="Describe your quilt, fabrics, timeline, or any special requests..."></textarea>
+          </div>
+          <div class="form-submit-row">
+            <span class="form-note">Rena responds within one business day.</span>
+            <button type="submit" class="form-submit">Send Message &#8594;</button>
+          </div>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3>Message Received!</h3>
+          <p>Thank you for reaching out. Rena will be in touch within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Rena Bean <span>Creations</span></div>
+    <div class="footer-copy">&#169; 2026 Rena Bean Creations LLC · Brock, Texas</div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#work">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
