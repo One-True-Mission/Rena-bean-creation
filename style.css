@@ -313,8 +313,12 @@ nav {
 }
 .stat-label {
   font-size: 0.58rem; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--text-dim);
-  margin-top: 0.35rem; font-weight: 500;
+  text-transform: uppercase; color: var(--text);
+  margin-top: 0.35rem; font-weight: 600;
+  background: rgba(255,255,255,0.7);
+  padding: 0.15rem 0.5rem;
+  border-radius: 1px;
+  display: inline-block;
 }
 
 /* HERO IMAGE */
@@ -536,11 +540,12 @@ section { padding: 6rem 4rem; }
 .process-step-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 4rem; font-weight: 300; line-height: 1;
-  color: rgba(59,31,63,0.25);
+  color: var(--plum);
+  opacity: 0.5;
   margin-bottom: 1rem;
-  transition: color 0.3s;
+  transition: opacity 0.3s;
 }
-.process-step:hover .process-step-num { color: rgba(59,31,63,0.5); }
+.process-step:hover .process-step-num { opacity: 0.85; }
 .process-step-tag {
   display: inline-block;
   font-size: 0.58rem; letter-spacing: 0.16em;
