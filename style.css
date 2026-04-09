@@ -487,10 +487,12 @@ section { padding: 6rem 4rem; }
 
 /* QUILTER'S CHOICE CALLOUT */
 .callout-strip {
-  background: var(--plum);
+  background: rgba(59,31,63,0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 2.5rem 4rem;
-  border-top: 1px solid rgba(201,168,76,0.2);
-  border-bottom: 1px solid rgba(201,168,76,0.2);
+  border-top: 1px solid rgba(201,168,76,0.25);
+  border-bottom: 1px solid rgba(201,168,76,0.25);
 }
 .callout-inner {
   max-width: 1100px; margin: 0 auto;
@@ -534,11 +536,11 @@ section { padding: 6rem 4rem; }
 .process-step-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 4rem; font-weight: 300; line-height: 1;
-  color: rgba(59,31,63,0.12);
+  color: rgba(59,31,63,0.25);
   margin-bottom: 1rem;
   transition: color 0.3s;
 }
-.process-step:hover .process-step-num { color: rgba(59,31,63,0.2); }
+.process-step:hover .process-step-num { color: rgba(59,31,63,0.5); }
 .process-step-tag {
   display: inline-block;
   font-size: 0.58rem; letter-spacing: 0.16em;
@@ -1042,12 +1044,21 @@ footer {
   a, button, input, select, textarea { cursor: auto !important; }
 }
 
-/* MOBILE BACKGROUND */
+/* MOBILE BACKGROUND — fixed pseudo-element workaround for iOS */
 @media (max-width: 900px) {
   body {
-    background-attachment: scroll;
-    background-size: cover;
-    background-position: center top;
+    background: transparent !important;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: var(--cream) url('assets/bg-light.jpg') center center / cover no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
   }
 }
 
