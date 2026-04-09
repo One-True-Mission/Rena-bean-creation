@@ -265,7 +265,29 @@
       <li><a href="shop.html" class="nav-shop" style="color:var(--plum) !important; font-weight:600 !important;">Shop</a></li>
     </ul>
     <a href="index.html#contact" class="nav-cta">Let's Create</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+    <div class="mobile-menu-logo">Rena Bean <span>Creations</span></div>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#process">Process</a></li>
+      <li><a href="index.html#work">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="index.html#contact" class="mobile-menu-cta">Let's Create</a>
+    <div class="mobile-menu-footer">
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" class="mobile-menu-ig">📸 @renabeancreations</a>
+    </div>
+  </div>
 
   <!-- SHOP HERO -->
   <section class="shop-hero">
