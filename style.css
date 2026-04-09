@@ -66,13 +66,18 @@ nav {
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--plum);
+  color: #fff;
   text-decoration: none;
   display: flex; align-items: center; gap: 0.5rem;
-  text-shadow: 0 1px 4px rgba(250,246,240,0.8);
+  background: var(--plum);
+  border: 1px solid var(--gold);
+  padding: 0.35rem 0.9rem 0.35rem 0.5rem;
+  box-shadow:
+    0 0 0 1px rgba(201,168,76,0.15),
+    0 2px 12px rgba(59,31,63,0.18);
 }
 .nav-logo span { color: var(--gold); font-style: italic; }
-.nav-logo-img { height: 48px; width: auto; display: block; }
+.nav-logo-img { height: 38px; width: auto; display: block; }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a {
   font-size: 0.78rem;
