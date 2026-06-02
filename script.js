@@ -74,7 +74,7 @@ window.addEventListener('scroll', () => {
   if (bar && total > 0) bar.style.width = (scrolled / total * 100) + '%';
   const backTop = document.getElementById('back-top');
   if (backTop) backTop.classList.toggle('visible', scrolled > 400);
-  const floatC = document.getElementById('float-contact');
+  const floatC = document.getElementById('float-call');
   if (floatC) floatC.classList.toggle('visible', scrolled > 400);
   const nav = document.getElementById('main-nav');
   if (nav) {

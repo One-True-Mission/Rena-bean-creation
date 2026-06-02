@@ -16,6 +16,7 @@
   <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
+  <a href="tel:8174588409" id="float-call" aria-label="Call Rena Bean Creations"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (817) 458-8409</a>
 
   <div id="cookie-banner">
     <p>This site uses cookies to improve your experience. By continuing, you agree to our use of cookies.</p>
@@ -28,8 +29,8 @@
   <!-- NAV -->
   <nav id="main-nav">
     <a href="index.html" class="nav-logo">
-      <img src="assets/rbc-logo.png" alt="Rena Bean Creations" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
-      <span id="logo-fallback" style="display:none;">Rena Bean <span>Creations</span></span>
+      <img src="assets/rbc-logo.png" alt="Rena Bean Creations" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+      <span class="nav-logo-fallback" style="display:none;">Rena Bean Creations</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html" data-nav="home">Home</a></li>
@@ -47,7 +48,7 @@
   <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu-close" onclick="toggleMenu()">&#10005;</button>
-    <div class="mobile-menu-logo">Rena Bean <span>Creations</span></div>
+    <div class="mobile-menu-logo"><img src="assets/rbc-logo.png" alt="Rena Bean Creations" class="mobile-menu-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span class="mobile-menu-logo-fallback" style="display:none;">Rena Bean Creations</span></div>
     <ul class="mobile-menu-links">
       <li><a href="index.html" data-nav="home">Home</a></li>
       <li><a href="services.html" data-nav="services">Services</a></li>
@@ -57,7 +58,11 @@
     </ul>
     <a href="contact.html" class="mobile-menu-cta">Let's Create</a>
     <div class="mobile-menu-footer">
-      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="mobile-menu-ig">&#128247; @renabeancreations</a>
+      <div class="footer-socials">
+          <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=100062982863708" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="https://uk.pinterest.com/rmh3694/rena-bean-creations/" target="_blank" rel="noopener" class="footer-social" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345c-.091.378-.293 1.193-.333 1.36-.052.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12C24 5.372 18.627 0 12 0z"></path></svg></a>
+        </div>
     </div>
   </div>
 
@@ -80,7 +85,7 @@
         <p>Share as much or as little as you like. The more Rena knows about your quilt top, backing, and timeline, the more accurate your quote will be.</p>
         <div class="contact-detail">
           <div class="contact-detail-icon">&#128205;</div>
-          <span>Brock, Texas. Mail-in welcome nationwide.</span>
+          <span>Weatherford, Texas. Mail-in welcome nationwide.</span>
         </div>
         <div class="contact-detail">
           <div class="contact-detail-icon">&#128247;</div>
@@ -154,6 +159,17 @@
     </div>
   </section>
 
+  <!-- BOOK A CALL -->
+  <section class="appt-section">
+    <div class="section-label reveal">Book a Call</div>
+    <h2 class="section-title reveal reveal-delay-1">Schedule a 30-Minute Call</h2>
+    <p class="section-sub reveal reveal-delay-1">New to longarm or memory quilts? Book a free 30-minute call with Rena to walk through the whole process: where to send your quilt, how to package it safely, what to expect on timing, and any questions you have. No pressure, just a friendly conversation so you can get started with confidence.</p>
+    <div class="reveal reveal-delay-2" style="margin-top:2rem;">
+      <a href="GOOGLE-CALENDAR-BOOKING-LINK" class="btn-primary" target="_blank" rel="noopener">Book a 30-Minute Call</a>
+      <p style="margin-top:1.1rem;font-size:0.8rem;color:var(--text-dim);line-height:1.7;max-width:540px;">Online scheduling is being set up. In the meantime, reach out through the form above or give Rena a call and she will find a time that works.</p>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section id="faq" class="faq-section">
     <div class="section-label reveal">Questions</div>
@@ -220,12 +236,13 @@
   <footer>
     <div class="footer-top">
       <div class="footer-col footer-brand">
-        <div class="footer-logo">Rena Bean <span>Creations</span></div>
-        <p class="footer-tagline">Longarm quilting, memory quilts, and t-shirt keepsakes, hand-finished with care in Brock, Texas. Mail-in welcome nationwide.</p>
-        <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="footer-social">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          @renabeancreations
-        </a>
+        <div class="footer-logo"><img src="assets/rbc-logo.png" alt="Rena Bean Creations" class="footer-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span class="footer-logo-fallback" style="display:none;">Rena Bean Creations</span></div>
+        <p class="footer-tagline">Longarm quilting, memory quilts, and t-shirt keepsakes, hand-finished with care in Weatherford, Texas. Mail-in welcome nationwide.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=100062982863708" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="https://uk.pinterest.com/rmh3694/rena-bean-creations/" target="_blank" rel="noopener" class="footer-social" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345c-.091.378-.293 1.193-.333 1.36-.052.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12C24 5.372 18.627 0 12 0z"></path></svg></a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
@@ -237,14 +254,14 @@
       </div>
       <div class="footer-col">
         <h4>Get in Touch</h4>
-        <p>Brock, Texas</p>
+        <p>Weatherford, Texas</p>
         <p>Mail-in welcome nationwide</p>
         <p>Replies within one business day</p>
         <a href="contact.html" class="footer-cta-link">Start a project &#8594;</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&#169; 2026 Rena Bean Creations LLC &middot; Brock, Texas</span>
+      <span>&#169; 2026 Rena Bean Creations LLC &middot; Weatherford, Texas</span>
       <span class="footer-bottom-links">
         <a href="privacy.html">Privacy Policy</a>
         <a href="https://otm-designs.com" target="_blank" rel="noopener">Built by OTM Web Design</a>
