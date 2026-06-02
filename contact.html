@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Rena Bean Creations</title>
+  <meta name="description" content="Start your quilting project with Rena Bean Creations. Tell Rena about your quilt, choose your add-ons, and she will reply with a plan and a price.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact">
+
+  <div id="progress-bar"></div>
+  <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <div id="cookie-banner">
+    <p>This site uses cookies to improve your experience. By continuing, you agree to our use of cookies.</p>
+    <div class="cookie-btns">
+      <button class="cookie-decline" onclick="dismissCookie()">Decline</button>
+      <button class="cookie-accept" onclick="dismissCookie()">Accept</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/rbc-logo.png" alt="Rena Bean Creations" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
+      <span id="logo-fallback" style="display:none;">Rena Bean <span>Creations</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-nav="home">Home</a></li>
+      <li><a href="services.html" data-nav="services">Services</a></li>
+      <li><a href="about.html" data-nav="about">About</a></li>
+      <li><a href="shop.html" class="nav-shop" data-nav="shop">Shop</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Let's Create</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="toggleMenu()">&#10005;</button>
+    <div class="mobile-menu-logo">Rena Bean <span>Creations</span></div>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html" data-nav="home">Home</a></li>
+      <li><a href="services.html" data-nav="services">Services</a></li>
+      <li><a href="about.html" data-nav="about">About</a></li>
+      <li><a href="shop.html" data-nav="shop">Shop</a></li>
+      <li><a href="contact.html" data-nav="contact">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="mobile-menu-cta">Let's Create</a>
+    <div class="mobile-menu-footer">
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="mobile-menu-ig">&#128247; @renabeancreations</a>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-bg-text">Hello</div>
+    <div class="page-hero-content reveal">
+      <div class="section-label">Get in Touch</div>
+      <h1 class="page-hero-title">Let's Create<br>Something <em>Beautiful</em></h1>
+      <p class="page-hero-sub">Tell Rena about your quilt, your fabric, and your vision. She will reply quickly with a plan and a price. No pressure, no runaround.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section has-tab">
+    <div class="contact-inner" style="margin-top:0;">
+      <div class="contact-info reveal">
+        <div class="section-label" style="margin-bottom:1.2rem;">Reach Rena</div>
+        <p>Share as much or as little as you like. The more Rena knows about your quilt top, backing, and timeline, the more accurate your quote will be.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">&#128205;</div>
+          <span>Brock, Texas. Mail-in welcome nationwide.</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">&#128247;</div>
+          <span>@renabeancreations on Instagram</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">&#9201;</div>
+          <span>Fast response. Usually within one business day.</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">&#10022;</div>
+          <span>Not sure on design or thread? Just ask for Quilter's Choice.</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
+          <input type="hidden" name="_subject" value="New project inquiry from Rena Bean Creations site">
+          <input type="hidden" name="_next" value="thank-you.html">
+          <div class="form-row">
+            <div class="form-field">
+              <label>First Name</label>
+              <input type="text" name="first_name" placeholder="Jane" required>
+            </div>
+            <div class="form-field">
+              <label>Last Name</label>
+              <input type="text" name="last_name" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="jane@email.com" required>
+            </div>
+            <div class="form-field">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="(555) 000-0000">
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Service Interested In</label>
+            <select name="service">
+              <option value="">Select a service...</option>
+              <option>Longarm Quilting</option>
+              <option>Memory Quilt</option>
+              <option>T-Shirt Memory Quilt</option>
+              <option>Novelty T-Shirt Order</option>
+              <option>Class Waitlist</option>
+              <option>General Question</option>
+            </select>
+          </div>
+          <div class="addon-checks">
+            <span>Add-Ons (select any)</span>
+            <div class="addon-checks-grid">
+              <label class="addon-check"><input type="checkbox" name="addons" value="Add Binding"> Add Binding</label>
+              <label class="addon-check"><input type="checkbox" name="addons" value="Add Batting"> Add Batting</label>
+              <label class="addon-check"><input type="checkbox" name="addons" value="Backing Piecing"> Backing Piecing</label>
+              <label class="addon-check"><input type="checkbox" name="addons" value="Rush Order"> Rush Order</label>
+              <label class="addon-check"><input type="checkbox" name="addons" value="Quilter's Choice"> Quilter's Choice</label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>A Note for Rena / Project Details</label>
+            <textarea rows="4" name="project_details" placeholder="Describe your quilt, fabrics, size, timeline, or any special requests..."></textarea>
+          </div>
+          <div class="form-submit-row">
+            <span class="form-note">Rena responds within one business day.</span>
+            <button type="submit" class="form-submit">Send Message &#8594;</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq-section">
+    <div class="section-label reveal">Questions</div>
+    <h2 class="section-title reveal reveal-delay-1">Frequently Asked</h2>
+    <div class="faq-list reveal reveal-delay-2">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you accept mail-in quilts from out of state?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, absolutely. Rena works with clients nationwide. USPS small prepaid boxes are a great affordable option for shipping quilt tops and backings. Rena will confirm receipt when your package arrives and keep you updated throughout the process.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is Quilter's Choice?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Quilter's Choice means you leave the design and thread color decisions to Rena. She has such a strong eye for what works with each unique quilt that many long-time clients choose this option every single time and have never been disappointed with the result.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How long does it take to get my quilt back?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Turnaround time varies based on current demand. Rena is known for fast turnaround and will give you an honest timeline estimate when you reach out. Need it sooner? Ask about a rush order. Many clients are pleasantly surprised by how quickly their quilt comes back.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Will my quilt be ready to bind when I receive it?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Rena trims every quilt before shipping it back so when it arrives in your hands it is ready to bind. You can also add binding as a service and Rena will finish the edges for you before it ships.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What do I need to send with my quilt?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Send your finished quilt top and backing fabric. Batting can be added as a service if you would like Rena to supply it. Include a note with your name, contact information, and any preferences or special instructions, or just add them to the form above.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you also sell novelty t-shirts?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Rena carries a small collection of quilting-themed novelty tees starting at $14.99. Visit the shop page to see the collection, then reach out and let Rena know which shirt and size you would like.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">Rena Bean <span>Creations</span></div>
+        <p class="footer-tagline">Longarm quilting, memory quilts, and t-shirt keepsakes, hand-finished with care in Brock, Texas. Mail-in welcome nationwide.</p>
+        <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="footer-social">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          @renabeancreations
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <p>Brock, Texas</p>
+        <p>Mail-in welcome nationwide</p>
+        <p>Replies within one business day</p>
+        <a href="contact.html" class="footer-cta-link">Start a project &#8594;</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2026 Rena Bean Creations LLC &middot; Brock, Texas</span>
+      <span class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://otm-designs.com" target="_blank" rel="noopener">Built by OTM Web Design</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

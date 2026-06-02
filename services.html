@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Rena Bean Creations</title>
+  <meta name="description" content="Longarm quilting, memory quilts, t-shirt quilts, and finishing add-ons including binding, batting, backing piecing, and rush orders. Mail-in welcome nationwide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="services">
+
+  <div id="progress-bar"></div>
+  <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <a href="contact.html" id="float-contact">Let's Create</a>
+
+  <div id="cookie-banner">
+    <p>This site uses cookies to improve your experience. By continuing, you agree to our use of cookies.</p>
+    <div class="cookie-btns">
+      <button class="cookie-decline" onclick="dismissCookie()">Decline</button>
+      <button class="cookie-accept" onclick="dismissCookie()">Accept</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/rbc-logo.png" alt="Rena Bean Creations" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
+      <span id="logo-fallback" style="display:none;">Rena Bean <span>Creations</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-nav="home">Home</a></li>
+      <li><a href="services.html" data-nav="services">Services</a></li>
+      <li><a href="about.html" data-nav="about">About</a></li>
+      <li><a href="shop.html" class="nav-shop" data-nav="shop">Shop</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Let's Create</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="toggleMenu()">&#10005;</button>
+    <div class="mobile-menu-logo">Rena Bean <span>Creations</span></div>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html" data-nav="home">Home</a></li>
+      <li><a href="services.html" data-nav="services">Services</a></li>
+      <li><a href="about.html" data-nav="about">About</a></li>
+      <li><a href="shop.html" data-nav="shop">Shop</a></li>
+      <li><a href="contact.html" data-nav="contact">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="mobile-menu-cta">Let's Create</a>
+    <div class="mobile-menu-footer">
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="mobile-menu-ig">&#128247; @renabeancreations</a>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-bg-text">Services</div>
+    <div class="page-hero-content reveal">
+      <div class="section-label">What I Do</div>
+      <h1 class="page-hero-title">Finishing Built for<br>Every <em>Quilter</em></h1>
+      <p class="page-hero-sub">From longarm finishing to memory quilts and keepsake t-shirt quilts, plus the extras that make the whole process effortless. Mail-in welcome nationwide.</p>
+    </div>
+  </section>
+
+  <!-- CORE SERVICES -->
+  <section id="services" class="has-tab">
+    <div class="section-label reveal">Core Services</div>
+    <h2 class="section-title reveal reveal-delay-1">Quilting Services</h2>
+    <p class="section-sub reveal reveal-delay-2">Every project is treated as a unique creative piece. Tell Rena what you are envisioning and she will guide you to the right finish.</p>
+
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <div class="service-icon">&#129525;</div>
+        <div class="service-tag">Most Popular</div>
+        <h3>Longarm Quilting</h3>
+        <p>Professional longarm finishing for your quilt tops. Bring your fabrics to life with Rena's expert eye for design and thread color. Quilter's Choice always welcome.</p>
+        <a href="contact.html" class="work-link">Request a Quote
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <div class="service-card-number">01</div>
+      </div>
+      <div class="service-item reveal reveal-delay-1">
+        <div class="service-icon">&#129768;</div>
+        <div class="service-tag">Heirloom Quality</div>
+        <h3>Memory Quilts</h3>
+        <p>Transform cherished clothing and fabrics into a timeless memory quilt. Perfect for preserving a loved one's legacy or celebrating life's most meaningful milestones.</p>
+        <a href="contact.html" class="work-link">Request a Quote
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <div class="service-card-number">02</div>
+      </div>
+      <div class="service-item reveal reveal-delay-2">
+        <div class="service-icon">&#128085;</div>
+        <div class="service-tag">Fan Favorite</div>
+        <h3>T-Shirt Memory Quilts</h3>
+        <p>Those concert tees, team jerseys, and college shirts deserve more than a drawer. Let Rena craft them into a quilt you will treasure and display forever.</p>
+        <a href="contact.html" class="work-link">Request a Quote
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <div class="service-card-number">03</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section id="addons">
+    <div class="section-label reveal">Finishing Extras</div>
+    <h2 class="section-title reveal reveal-delay-1">Add-Ons &amp; Options</h2>
+    <p class="section-sub reveal reveal-delay-2">Make your order exactly what you need. Add any of these when you reach out and Rena will fold them into your quote.</p>
+
+    <div class="addon-grid reveal reveal-delay-2">
+      <div class="addon-item">
+        <span class="addon-icon">&#9986;</span>
+        <h4>Add Binding</h4>
+        <p>Let Rena finish the edges so your quilt is complete and ready to use the moment it arrives back to you.</p>
+      </div>
+      <div class="addon-item">
+        <span class="addon-icon">&#9729;</span>
+        <h4>Add Batting</h4>
+        <p>Skip sourcing your own. Rena can supply quality batting matched to your project and quilting style.</p>
+      </div>
+      <div class="addon-item">
+        <span class="addon-icon">&#129526;</span>
+        <h4>Backing Piecing</h4>
+        <p>Send your backing fabric and Rena will piece it to the right size for your quilt top before finishing.</p>
+      </div>
+      <div class="addon-item">
+        <span class="addon-icon">&#9889;</span>
+        <h4>Rush Order</h4>
+        <p>On a deadline? Ask about moving your project toward the front of the queue for a faster turnaround.</p>
+      </div>
+      <div class="addon-item">
+        <span class="addon-icon">&#9997;</span>
+        <h4>A Note for Rena</h4>
+        <p>Have special instructions or a personal request? Include a note with your order and Rena will take care of it.</p>
+      </div>
+      <div class="addon-item">
+        <span class="addon-icon">&#10022;</span>
+        <h4>Quilter's Choice</h4>
+        <p>Not sure on design or thread color? Leave it to Rena. Her clients trust her eye completely, every time.</p>
+      </div>
+    </div>
+    <p class="addon-note reveal">Add-ons are priced per project. Select what you want on the contact form and Rena will send a single, clear quote.</p>
+  </section>
+
+  <!-- QUILTER'S CHOICE CALLOUT -->
+  <div class="callout-strip reveal">
+    <div class="callout-inner">
+      <div class="callout-icon">&#10022;</div>
+      <div class="callout-text">
+        <strong>What is Quilter's Choice?</strong>
+        Not sure which design or thread color to pick? Leave it to Rena. Her clients trust her eye for color and design so completely that they simply say "Quilter's Choice" and have never been disappointed.
+      </div>
+      <a href="contact.html" class="btn-primary">Start a Project</a>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="section-label reveal">How It Works</div>
+    <h2 class="section-title reveal reveal-delay-1">Simple Process</h2>
+    <p class="section-sub reveal reveal-delay-2">Sending your quilt across the country can feel daunting. Here is exactly what working with Rena looks like from start to finish.</p>
+
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="process-step-num">01</div>
+        <div class="process-step-tag">Get Started</div>
+        <h3>Reach Out</h3>
+        <p>Fill out the contact form or send a message. Tell Rena about your quilt top, your fabric, and what you are envisioning. She will respond quickly with a plan and a price.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-step-num">02</div>
+        <div class="process-step-tag">Ship It</div>
+        <h3>Mail Your Quilt</h3>
+        <p>Pack your quilt top and backing and ship it to Brock, Texas. USPS small prepaid boxes work perfectly and keep shipping affordable. Rena will confirm when it arrives.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-step-num">03</div>
+        <div class="process-step-tag">We Create</div>
+        <h3>Rena Gets to Work</h3>
+        <p>Your quilt is finished with expert longarm craftsmanship. Every stitch placed with intention. When complete it is trimmed and ready to bind so it arrives ready to use.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-step-num">04</div>
+        <div class="process-step-tag">Done</div>
+        <h3>Shipped Back to You</h3>
+        <p>Your finished quilt is carefully packed and shipped back. Clients across the country keep coming back because the result speaks for itself every single time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="section-label reveal">Latest Creations</div>
+    <h2 class="section-title reveal reveal-delay-1">A Look at Recent Work</h2>
+    <p class="section-sub reveal reveal-delay-2">Every quilt tells a story. Tap any piece to see more on Instagram, where Rena shares new creations and works in progress.</p>
+
+    <div class="gallery-grid reveal reveal-delay-2">
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="gallery-card">
+        <img src="assets/gallery-1.jpg" alt="Rena Bean Creations quilt" class="gallery-img" onerror="this.parentElement.classList.add('no-img')">
+        <div class="gallery-overlay">
+          <svg class="gallery-ig-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="gallery-card">
+        <img src="assets/gallery-2.jpg" alt="Rena Bean Creations quilt" class="gallery-img" onerror="this.parentElement.classList.add('no-img')">
+        <div class="gallery-overlay">
+          <svg class="gallery-ig-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="gallery-card">
+        <img src="assets/gallery-3.jpg" alt="Rena Bean Creations quilt" class="gallery-img" onerror="this.parentElement.classList.add('no-img')">
+        <div class="gallery-overlay">
+          <svg class="gallery-ig-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="gallery-card">
+        <img src="assets/gallery-4.jpg" alt="Rena Bean Creations quilt" class="gallery-img" onerror="this.parentElement.classList.add('no-img')">
+        <div class="gallery-overlay">
+          <svg class="gallery-ig-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="gallery-card">
+        <img src="assets/gallery-5.jpg" alt="Rena Bean Creations quilt" class="gallery-img" onerror="this.parentElement.classList.add('no-img')">
+        <div class="gallery-overlay">
+          <svg class="gallery-ig-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="gallery-card">
+        <img src="assets/gallery-6.jpg" alt="Rena Bean Creations quilt" class="gallery-img" onerror="this.parentElement.classList.add('no-img')">
+        <div class="gallery-overlay">
+          <svg class="gallery-ig-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="gallery-card">
+        <img src="assets/gallery-7.jpg" alt="Rena Bean Creations quilt" class="gallery-img" onerror="this.parentElement.classList.add('no-img')">
+        <div class="gallery-overlay">
+          <svg class="gallery-ig-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="gallery-card gallery-card-cta">
+        <img src="assets/gallery-8.jpg" alt="Rena Bean Creations quilt" class="gallery-img" onerror="this.parentElement.classList.add('no-img')">
+        <div class="gallery-overlay gallery-overlay-cta">
+          <svg class="gallery-ig-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span>See More on Instagram</span>
+          <span class="gallery-ig-handle">@renabeancreations</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">Rena Bean <span>Creations</span></div>
+        <p class="footer-tagline">Longarm quilting, memory quilts, and t-shirt keepsakes, hand-finished with care in Brock, Texas. Mail-in welcome nationwide.</p>
+        <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="footer-social">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          @renabeancreations
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <p>Brock, Texas</p>
+        <p>Mail-in welcome nationwide</p>
+        <p>Replies within one business day</p>
+        <a href="contact.html" class="footer-cta-link">Start a project &#8594;</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2026 Rena Bean Creations LLC &middot; Brock, Texas</span>
+      <span class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://otm-designs.com" target="_blank" rel="noopener">Built by OTM Web Design</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
