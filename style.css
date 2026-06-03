@@ -160,13 +160,11 @@ nav {
 .hero-content { position: relative; z-index: 2; max-width: 580px; flex-shrink: 0; }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 0.6rem;
-  font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--yellow); margin-bottom: 1.2rem; font-weight: 700;
-  background: var(--red);
-  border: 2px solid var(--green);
-  padding: 0.55rem 1.15rem; border-radius: 8px; width: fit-content;
-  box-shadow: 0 3px 14px var(--red-glow);
-  text-shadow: 0 1px 2px rgba(120,28,20,0.45);
+  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 1rem; font-weight: 700;
+  background: rgba(250,246,240,0.92);
+  border: 1px solid var(--border); border-left: 3px solid var(--yellow);
+  padding: 0.35rem 0.9rem; border-radius: 6px; width: fit-content;
 }
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
