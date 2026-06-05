@@ -704,3 +704,8 @@ nav .hamburger span { background: var(--red); }
   .feature-slide.is-prev, .feature-slide.is-next { opacity: 0; }
   .feature-btn { width: 38px; height: 38px; }
 }
+
+
+/* OTM FOOTER CREDIT -- always brand contrast, never muted gray */
+.footer-bottom-links a[href*="otm-designs"] { color: var(--red); font-weight: 600; }
+.footer-bottom-links a[href*="otm-designs"]:hover { color: var(--red-light); }

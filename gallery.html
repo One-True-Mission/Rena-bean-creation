@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Rena Bean Creations</title>
+  <meta name="description" content="A gallery of finished quilts by Rena Bean Creations: t-shirt quilts, memory quilts made from loved ones' clothing, and custom longarm work. Mail-in welcome nationwide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* GALLERY PAGE */
+    body[data-page="gallery"] .page-hero { background-image: url('assets/hero-services.jpg'); }
+    .g-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 2.2rem; }
+    .g-card { position: relative; aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: rgba(40,30,18,0.06); border: 1px solid var(--border); cursor: none; padding: 0; display: block; width: 100%; transition: box-shadow 0.3s, transform 0.3s; }
+    .g-card:hover { transform: translateY(-3px); box-shadow: 0 0 0 3px var(--green), 0 14px 30px rgba(40,30,18,0.18); }
+    .g-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .g-card:hover img { transform: scale(1.06); }
+    .g-zoom { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(28,24,16,0.42); opacity: 0; transition: opacity 0.3s; }
+    .g-card:hover .g-zoom { opacity: 1; }
+    .g-zoom svg { width: 30px; height: 30px; color: #fff; }
+    .gallery-cta { text-align: center; }
+    .gallery-cta .section-label { margin-left: auto; margin-right: auto; }
+    .gallery-cta .section-sub { margin-left: auto; margin-right: auto; }
+    .gallery-cta h2 em { font-style: italic; color: var(--red); }
+    #lightbox { position: fixed; inset: 0; z-index: 300; background: rgba(20,16,10,0.93); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 4vh 4vw; }
+    #lightbox.open { display: flex; }
+    .lightbox-img { max-width: 90vw; max-height: 86vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); border: 3px solid #fff; }
+    .lightbox-close { position: absolute; top: 1.2rem; right: 1.4rem; width: 46px; height: 46px; border-radius: 12px; border: none; background: rgba(255,255,255,0.14); color: #fff; font-size: 1.3rem; cursor: none; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .lightbox-close:hover { background: var(--red); }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; border: none; background: rgba(255,255,255,0.14); color: #fff; font-size: 1.4rem; cursor: none; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .lightbox-nav:hover { background: var(--red); }
+    .lightbox-prev { left: 1.4rem; }
+    .lightbox-next { right: 1.4rem; }
+    @media (max-width: 900px) { .g-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .g-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .lightbox-nav { width: 42px; height: 42px; } .lightbox-prev { left: 0.6rem; } .lightbox-next { right: 0.6rem; } }
+    .g-expand { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.6rem; background: rgba(40,30,18,0.06); border: 1px solid var(--border); border-left: 3px solid var(--yellow); color: var(--red); padding: 0.65rem 1.4rem; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: none; transition: background 0.2s, color 0.2s; }
+    .g-expand:hover { background: var(--red); color: #fff; }
+    .g-grid.is-collapsible[data-collapsed="true"] .g-card:nth-child(n+7) { display: none; }
+  </style>
+</head>
+<body data-page="gallery">
+
+  <div id="progress-bar"></div>
+  <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <a href="tel:8174588409" id="float-call" aria-label="Call Rena Bean Creations"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (817) 458-8409</a>
+
+  <div id="cookie-banner">
+    <p>This site uses cookies to improve your experience. By continuing, you agree to our use of cookies.</p>
+    <div class="cookie-btns">
+      <button class="cookie-decline" onclick="dismissCookie()">Decline</button>
+      <button class="cookie-accept" onclick="dismissCookie()">Accept</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/rbc-logo.png" alt="Rena Bean Creations" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+        <span class="nav-logo-fallback" style="display:none;">Rena Bean Creations</span>
+      </a>
+      <a href="tel:8174588409" class="nav-phone" aria-label="Call (817) 458-8409"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (817) 458-8409</a>
+    </div>
+    <div class="nav-location"><span class="badge-icon">&#129525;</span> Weatherford, Texas</div>
+    <ul class="nav-links">
+      <li><a href="index.html" data-nav="home">Home</a></li>
+      <li><a href="services.html" data-nav="services">Services</a></li>
+      <li><a href="about.html" data-nav="about">About</a></li>
+      <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
+      <li><a href="shop.html" class="nav-shop" data-nav="shop">Shop</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Let's Create</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="toggleMenu()">&#10005;</button>
+    <div class="mobile-menu-logo"><img src="assets/rbc-logo.png" alt="Rena Bean Creations" class="mobile-menu-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span class="mobile-menu-logo-fallback" style="display:none;">Rena Bean Creations</span></div>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html" data-nav="home">Home</a></li>
+      <li><a href="services.html" data-nav="services">Services</a></li>
+      <li><a href="about.html" data-nav="about">About</a></li>
+      <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
+      <li><a href="shop.html" data-nav="shop">Shop</a></li>
+      <li><a href="contact.html" data-nav="contact">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="mobile-menu-cta">Let's Create</a>
+    <div class="mobile-menu-footer">
+      <div class="footer-socials">
+          <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=100062982863708" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="https://uk.pinterest.com/rmh3694/rena-bean-creations/" target="_blank" rel="noopener" class="footer-social" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345c-.091.378-.293 1.193-.333 1.36-.052.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12C24 5.372 18.627 0 12 0z"></path></svg></a>
+        </div>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-bg-text">Gallery</div>
+    <div class="page-hero-content reveal">
+      <div class="section-label">The Gallery</div>
+      <h1 class="page-hero-title">A Gallery of<br>Finished <em>Work</em></h1>
+      <p class="page-hero-sub">A look at quilts Rena has brought to life: keepsake t-shirt quilts, memory quilts made from the clothing of loved ones, and one-of-a-kind custom work. Tap any photo to see it up close.</p>
+    </div>
+  </section>
+
+  <!-- T-SHIRT QUILTS -->
+  <section class="has-tab">
+    <div class="section-label reveal">Category</div>
+    <h2 class="section-title reveal reveal-delay-1">T-Shirt Quilts</h2>
+    <p class="section-sub reveal reveal-delay-1">Beloved tees, jerseys, and race shirts given a second life, sewn together into a quilt you can actually use.</p>
+    <div class="g-grid is-collapsible reveal reveal-delay-2" data-collapsed="true">
+      <button class="g-card" data-full="assets/tshirt-quilt-1.jpg" data-alt="T-shirt quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/tshirt-quilt-1.jpg" loading="lazy" alt="T-shirt quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/tshirt-quilt-2.jpg" data-alt="T-shirt quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/tshirt-quilt-2.jpg" loading="lazy" alt="T-shirt quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/tshirt-quilt-3.jpg" data-alt="T-shirt quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/tshirt-quilt-3.jpg" loading="lazy" alt="T-shirt quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/tshirt-quilt-4.jpg" data-alt="T-shirt quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/tshirt-quilt-4.jpg" loading="lazy" alt="T-shirt quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/tshirt-quilt-5.jpg" data-alt="T-shirt quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/tshirt-quilt-5.jpg" loading="lazy" alt="T-shirt quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/tshirt-quilt-6.jpg" data-alt="T-shirt quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/tshirt-quilt-6.jpg" loading="lazy" alt="T-shirt quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/tshirt-quilt-7.jpg" data-alt="T-shirt quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/tshirt-quilt-7.jpg" loading="lazy" alt="T-shirt quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/tshirt-quilt-8.jpg" data-alt="T-shirt quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/tshirt-quilt-8.jpg" loading="lazy" alt="T-shirt quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/tshirt-quilt-9.jpg" data-alt="T-shirt quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/tshirt-quilt-9.jpg" loading="lazy" alt="T-shirt quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/tshirt-quilt-10.jpg" data-alt="T-shirt quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/tshirt-quilt-10.jpg" loading="lazy" alt="T-shirt quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+    </div>
+    <button class="g-expand reveal" onclick="toggleCategory(this)" data-count="10">View all 10</button>
+  </section>
+
+  <!-- MEMORY QUILTS -->
+  <section>
+    <div class="section-label reveal">Category</div>
+    <h2 class="section-title reveal reveal-delay-1">Memory Quilts</h2>
+    <p class="section-sub reveal reveal-delay-1">Made from the clothing of someone loved, pieced together into a keepsake that keeps them close.</p>
+    <div class="g-grid reveal reveal-delay-2">
+      <button class="g-card" data-full="assets/memory-quilt-1.jpg" data-alt="Memory quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/memory-quilt-1.jpg" loading="lazy" alt="Memory quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/memory-quilt-2.jpg" data-alt="Memory quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/memory-quilt-2.jpg" loading="lazy" alt="Memory quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/memory-quilt-3.jpg" data-alt="Memory quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/memory-quilt-3.jpg" loading="lazy" alt="Memory quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/memory-quilt-4.jpg" data-alt="Memory quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/memory-quilt-4.jpg" loading="lazy" alt="Memory quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/memory-quilt-5.jpg" data-alt="Memory quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/memory-quilt-5.jpg" loading="lazy" alt="Memory quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/memory-quilt-6.jpg" data-alt="Memory quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/memory-quilt-6.jpg" loading="lazy" alt="Memory quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- CUSTOM QUILTS -->
+  <section>
+    <div class="section-label reveal">Category</div>
+    <h2 class="section-title reveal reveal-delay-1">Custom Quilts</h2>
+    <p class="section-sub reveal reveal-delay-1">One-of-a-kind commissions and custom longarm work in every style.</p>
+    <div class="g-grid is-collapsible reveal reveal-delay-2" data-collapsed="true">
+      <button class="g-card" data-full="assets/custom-quilt-1.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-1.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-2.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-2.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-3.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-3.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-4.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-4.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-5.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-5.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-6.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-6.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-7.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-7.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-8.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-8.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-9.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-9.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-10.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-10.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-11.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-11.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-12.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-12.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-13.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-13.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-14.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-14.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-15.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-15.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-16.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-16.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-17.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-17.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-18.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-18.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-19.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-19.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-20.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-20.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-21.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-21.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-22.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-22.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-23.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-23.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-24.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-24.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-25.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-25.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/custom-quilt-26.jpg" data-alt="Custom quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/custom-quilt-26.jpg" loading="lazy" alt="Custom quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/gallery-1.jpg" data-alt="Featured quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/gallery-1.jpg" loading="lazy" alt="Featured quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/gallery-2.jpg" data-alt="Featured quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/gallery-2.jpg" loading="lazy" alt="Featured quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/gallery-3.jpg" data-alt="Featured quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/gallery-3.jpg" loading="lazy" alt="Featured quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/gallery-4.jpg" data-alt="Featured quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/gallery-4.jpg" loading="lazy" alt="Featured quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+      <button class="g-card" data-full="assets/gallery-5.jpg" data-alt="Featured quilt by Rena Bean Creations" onclick="openLightbox(this)">
+        <img src="assets/gallery-5.jpg" loading="lazy" alt="Featured quilt by Rena Bean Creations" onerror="this.closest('.g-card').style.display='none'">
+        <span class="g-zoom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
+      </button>
+    </div>
+    <button class="g-expand reveal" onclick="toggleCategory(this)" data-count="31">View all 31</button>
+  </section>
+
+  <!-- GALLERY CTA -->
+  <section class="gallery-cta">
+    <div class="section-label reveal">Your Turn</div>
+    <h2 class="section-title reveal reveal-delay-1">Ready to Start <em>Yours?</em></h2>
+    <p class="section-sub reveal reveal-delay-1">Whether it is a pile of t-shirts, a loved one's clothing, or a quilt top you pieced yourself, Rena can bring it to life.</p>
+    <div class="reveal reveal-delay-2" style="margin-top:2rem;">
+      <a href="contact.html" class="btn-primary">Let's Create</a>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" onclick="lightboxClose()" aria-label="Close">&#10005;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="lightboxPrev()" aria-label="Previous">&#8592;</button>
+    <img class="lightbox-img" src="" alt="">
+    <button class="lightbox-nav lightbox-next" onclick="lightboxNext()" aria-label="Next">&#8594;</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo"><img src="assets/rbc-logo.png" alt="Rena Bean Creations" class="footer-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span class="footer-logo-fallback" style="display:none;">Rena Bean Creations</span></div>
+        <p class="footer-tagline">Longarm quilting, memory quilts, and t-shirt keepsakes, hand-finished with care in Weatherford, Texas. Mail-in welcome nationwide.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=100062982863708" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="https://uk.pinterest.com/rmh3694/rena-bean-creations/" target="_blank" rel="noopener" class="footer-social" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345c-.091.378-.293 1.193-.333 1.36-.052.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12C24 5.372 18.627 0 12 0z"></path></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <p>Weatherford, Texas</p>
+        <p>Mail-in welcome nationwide</p>
+        <p>Replies within one business day</p>
+        <a href="contact.html" class="footer-cta-link">Start a project &#8594;</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2026 Rena Bean Creations LLC &middot; Weatherford, Texas</span>
+      <span class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://otm-designs.com" target="_blank" rel="noopener">Built by OTM Web Design</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
