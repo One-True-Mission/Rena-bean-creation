@@ -3,60 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop | Rena Bean Creations</title>
-  <meta name="description" content="Quilting-themed novelty tees from Rena Bean Creations. Gifts for every sewist, starting at $14.99.">
+  <title>Accessibility Statement | Rena Bean Creations</title>
+  <meta name="description" content="The accessibility statement for Rena Bean Creations, and how to reach us if you encounter any barriers using this site.">
+  <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* SHOP PAGE SUB-CARDS (inside frames) */
-    .shop-products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 2.5rem; }
-    .product-card {
-      background: rgba(255,255,255,0.96);
-      border: 1px solid var(--border);
-      border-radius: 10px; overflow: hidden;
-      box-shadow: inset 0 3px 0 var(--red), 0 2px 10px rgba(40,30,18,0.06);
-      display: flex; flex-direction: column;
-      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    }
-    .product-card:hover { transform: translateY(-4px); box-shadow: inset 0 3px 0 var(--red), inset 3px 0 0 var(--green), 0 14px 34px rgba(40,30,18,0.16); border-color: var(--green); }
-    .product-img-wrap { width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; background: rgba(40,30,18,0.04); }
-    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
-    .product-card:hover .product-img-wrap img { transform: scale(1.05); }
-    .product-img-wrap.no-img { display: flex; align-items: center; justify-content: center; }
-    .product-img-wrap.no-img::after { content: "\1F455"; font-size: 3rem; opacity: 0.5; }
-    .product-badge { position: absolute; top: 1rem; left: 1rem; background: var(--red); color: #fff; font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 2px; font-weight: 500; }
-    .product-info { padding: 1.5rem 1.5rem 0; flex: 1; }
-    .product-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--text); margin-bottom: 0.5rem; line-height: 1.2; }
-    .product-info p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; margin-bottom: 1rem; }
-    .product-price-row { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem 1.5rem; margin-top: auto; }
-    .product-price { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--red); }
-    .product-order-btn { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--red); color: #fff; padding: 0.6rem 1.3rem; border-radius: 10px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; cursor: none; transition: background 0.2s; box-shadow: 0 2px 12px var(--red-glow); }
-    .product-order-btn:hover { background: var(--red-light); }
-    .how-to-inner { max-width: 980px; margin: 0 auto; }
-    .how-to-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 2.5rem; }
-    .how-to-step { background: rgba(255,255,255,0.96); border: 1px solid var(--border); border-radius: 10px; box-shadow: inset 0 3px 0 var(--red), 0 2px 10px rgba(40,30,18,0.06); padding: 2rem 1.8rem; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
-    .how-to-step:hover { transform: translateY(-4px); box-shadow: inset 0 3px 0 var(--red), inset 3px 0 0 var(--green), 0 14px 34px rgba(40,30,18,0.16); border-color: var(--green); }
-    .how-to-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--red); opacity: 0.4; line-height: 1; margin-bottom: 0.8rem; }
-    .how-to-step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--text); margin-bottom: 0.5rem; }
-    .how-to-step p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
-    .shopify-note { display: flex; align-items: center; gap: 1rem; max-width: 980px; margin: 2.5rem auto 0; background: rgba(201,168,76,0.12); border: 1px solid var(--border-gold); border-radius: 10px; padding: 1.2rem 1.6rem; }
-    .shopify-note-icon { font-size: 1.4rem; flex-shrink: 0; }
-    .shopify-note p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; margin: 0; }
-    .shop-cta { text-align: center; }
-    .shop-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--text); margin-bottom: 0.8rem; line-height: 1.1; }
-    .shop-cta h2 em { font-style: italic; color: var(--red); }
-    .shop-cta p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; max-width: 440px; margin: 0 auto 2rem; font-weight: 300; }
-    .shop-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    @media (max-width: 900px) {
-      .shop-products { grid-template-columns: 1fr; }
-      .how-to-steps { grid-template-columns: 1fr; }
-      .shop-cta-btns { flex-direction: column; align-items: center; }
-    }
-  </style>
 </head>
-<body data-page="shop">
+<body data-page="accessibility">
 
   <div id="progress-bar"></div>
   <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
@@ -87,7 +42,7 @@
       <li><a href="services.html" data-nav="services">Services</a></li>
       <li><a href="about.html" data-nav="about">About</a></li>
       <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
-      <li><a href="shop.html" class="nav-shop" data-nav="shop">Shop</a></li>
+      <li><a href="shop.html" data-nav="shop">Shop</a></li>
     </ul>
     <a href="contact.html" class="nav-cta">Let's Create</a>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
@@ -120,101 +75,33 @@
 
   <!-- PAGE HERO -->
   <section class="page-hero">
-    <div class="page-hero-grid"></div>
-    <div class="page-hero-bg-text">Shop</div>
     <div class="page-hero-content reveal">
-      <div class="section-label">The Collection</div>
-      <h1 class="page-hero-title">Gifts for Every<br><em>Sewist</em></h1>
-      <p class="page-hero-sub">Novelty tees made for the quilter in your life. Whether it is a gift or a treat for yourself, these are made for the ones who sew with their whole heart.</p>
+      <div class="section-label">Legal</div>
+      <h1 class="page-hero-title">Accessibility <em>Statement</em></h1>
+      <p class="page-hero-sub">Our commitment to making this website usable for everyone, and how to reach us if something gets in your way.</p>
     </div>
   </section>
 
-  <!-- PRODUCTS -->
-  <section class="shop-main has-tab">
-    <div class="section-label reveal">Novelty Tees</div>
-    <h2 class="section-title reveal reveal-delay-1">Browse the Collection</h2>
-    <div class="shop-products">
-      <div class="product-card reveal">
-        <div class="product-img-wrap">
-          <img src="assets/tee-sewciopath.jpg" alt="I AM A Sewciopath Tee" onerror="this.parentElement.classList.add('no-img')">
-          <div class="product-badge">Best Seller</div>
-        </div>
-        <div class="product-info">
-          <h3>I AM A Sewciopath</h3>
-          <p>For the quilter who lives, breathes, and dreams in fabric. A fun, bold tee that every sewist will immediately recognize themselves in.</p>
-        </div>
-        <div class="product-price-row">
-          <span class="product-price">$14.99</span>
-          <a href="contact.html" class="product-order-btn">Contact to Order</a>
-        </div>
-      </div>
-      <div class="product-card reveal reveal-delay-1">
-        <div class="product-img-wrap">
-          <img src="assets/tee-sew-heart.jpg" alt="I Sew a Piece of My Heart Tee" onerror="this.parentElement.classList.add('no-img')">
-          <div class="product-badge">Fan Favorite</div>
-        </div>
-        <div class="product-info">
-          <h3>I Sew a Piece of My Heart</h3>
-          <p>The perfect gift for the quilter who puts love into every stitch. A heartfelt tee that captures exactly why they do what they do.</p>
-        </div>
-        <div class="product-price-row">
-          <span class="product-price">$14.99</span>
-          <a href="contact.html" class="product-order-btn">Contact to Order</a>
-        </div>
-      </div>
-      <div class="product-card reveal reveal-delay-2">
-        <div class="product-img-wrap">
-          <img src="assets/tee-forget.jpg" alt="I Sew And Forget Things Tee" onerror="this.parentElement.classList.add('no-img')">
-          <div class="product-badge">Too Real</div>
-        </div>
-        <div class="product-info">
-          <h3>I Sew And Forget Things</h3>
-          <p>Because the fabric always comes first. A relatable tee that every quilter will laugh at and immediately want to wear to their next sewing circle.</p>
-        </div>
-        <div class="product-price-row">
-          <span class="product-price">$14.99</span>
-          <a href="contact.html" class="product-order-btn">Contact to Order</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- LEGAL -->
+  <section class="has-tab">
+    <div class="legal-body">
+      <p class="legal-updated">Last updated: June 2026</p>
+      <p>Rena Bean Creations is committed to making this website usable by as many people as possible, including visitors who use assistive technologies such as screen readers, keyboard navigation, or screen magnification.</p>
 
-  <!-- HOW TO ORDER -->
-  <section class="how-to-order">
-    <div class="how-to-inner">
-      <div class="section-label reveal">Ordering</div>
-      <h2 class="section-title reveal reveal-delay-1">How to Order</h2>
-      <div class="how-to-steps">
-        <div class="how-to-step reveal">
-          <div class="how-to-num">01</div>
-          <h4>Pick Your Tee</h4>
-          <p>Browse the collection above and choose your favorite. Each design is premade at a flat $14.99.</p>
-        </div>
-        <div class="how-to-step reveal reveal-delay-1">
-          <div class="how-to-num">02</div>
-          <h4>Send a Message</h4>
-          <p>Tap Contact to Order and let Rena know which tee you want and your size. She will reply quickly with payment and shipping details.</p>
-        </div>
-        <div class="how-to-step reveal reveal-delay-2">
-          <div class="how-to-num">03</div>
-          <h4>Rena Ships It</h4>
-          <p>Your order comes straight to Rena, who packs it up and ships it out fast. Personal service from start to finish.</p>
-        </div>
-      </div>
-      <div class="shopify-note">
-        <span class="shopify-note-icon">&#128717;</span>
-        <p>All orders are placed personally through Rena. Reach out with the tee and size you want and she will take care of payment and shipping directly. Looking for a longarm finish, a memory quilt, or a t-shirt quilt? Those are quoted to fit your project, so head to the <a href="contact.html" style="color:var(--red);font-weight:500;">contact page</a> too.</p>
-      </div>
-    </div>
-  </section>
+      <h2>Our Commitment</h2>
+      <p>We want everyone to be able to explore Rena's work and get in touch easily. We aim to follow widely recognized accessibility best practices, guided by the Web Content Accessibility Guidelines (WCAG) version 2.1 at the AA level, as a benchmark for how usable this site is for people with disabilities.</p>
 
-  <!-- CTA -->
-  <section class="shop-cta">
-    <h2 class="reveal">Looking for a <em>quilting service?</em></h2>
-    <p class="reveal">The shop is just one part of what Rena does. Explore her longarm quilting, memory quilts, and t-shirt quilt services.</p>
-    <div class="shop-cta-btns reveal">
-      <a href="services.html" class="btn-primary">View Services</a>
-      <a href="contact.html" class="btn-ghost">Let's Create</a>
+      <h2>What We Do</h2>
+      <p>This site is built with clean, semantic HTML and includes descriptive text for images, readable color contrast, keyboard-friendly navigation, and a responsive layout that works across phones, tablets, and computers.</p>
+
+      <h2>Ongoing Effort</h2>
+      <p>Accessibility is an ongoing effort rather than a one-time task. We review the site periodically and make improvements as we are able. Some content may not yet fully meet every guideline, and we are committed to addressing issues as they come to our attention.</p>
+
+      <h2>Third-Party Tools</h2>
+      <p>Some features of this site rely on third-party services, such as embedded scheduling or contact forms. We do not control the accessibility of those external tools, though we choose services that aim to be accessible.</p>
+
+      <h2>Let Us Know</h2>
+      <p>If you run into any difficulty using this website, or if you need information from it in a different format, please tell us. We take this feedback seriously and will do our best to help. You can reach us through our <a href="contact.html">contact page</a> or message us on Instagram at <a href="https://www.instagram.com/renabeancreations/" target="_blank" rel="noopener">@renabeancreations</a>.</p>
     </div>
   </section>
 

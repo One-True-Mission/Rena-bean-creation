@@ -298,8 +298,10 @@
         <h3>Monthly Comfort in Stitches</h3>
         <p>Quilting tips, new creations, and community warmth delivered to your inbox once a month.</p>
       </div>
-      <form class="newsletter-form" id="newsletterForm" onsubmit="submitNewsletter(event)">
-        <input type="email" placeholder="Your email address" required>
+      <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/mdavebrn" method="POST" onsubmit="submitNewsletter(event)">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <input type="hidden" name="_subject" value="New newsletter signup from Rena Bean Creations site">
+        <input type="hidden" name="signup_type" value="Newsletter">
         <button type="submit">Subscribe</button>
       </form>
     </div>
@@ -337,6 +339,8 @@
       <span>&#169; 2026 Rena Bean Creations LLC &middot; Weatherford, Texas</span>
       <span class="footer-bottom-links">
         <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="accessibility.html">Accessibility</a>
         <a href="https://otm-designs.com" target="_blank" rel="noopener">Built by OTM Web Design</a>
       </span>
     </div>
