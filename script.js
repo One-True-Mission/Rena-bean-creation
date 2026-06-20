@@ -153,7 +153,7 @@ function submitWaitlist(e) {
     if (res.ok) {
       btn.textContent = 'You are on the list!';
       btn.style.background = '#1E7D3C';
-      input.value = '';
+      form.querySelectorAll('input:not([type="hidden"])').forEach(function (i) { i.value = ''; });
     } else {
       btn.textContent = 'Try again';
       btn.disabled = false;
@@ -167,11 +167,28 @@ function submitWaitlist(e) {
 // NEWSLETTER FORM (front-end confirmation only)
 function submitNewsletter(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button');
-  btn.textContent = 'Subscribed!';
+  const form = e.target;
+  const btn = form.querySelector('button');
+  const input = form.querySelector('input[type="email"]');
+  btn.textContent = 'Subscribing...';
   btn.disabled = true;
-  btn.style.background = '#4a7c59';
-  e.target.querySelector('input').value = '';
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(function (res) {
+    if (res.ok) {
+      btn.textContent = 'Subscribed!';
+      btn.style.background = '#1E7D3C';
+      form.querySelectorAll('input:not([type="hidden"])').forEach(function (i) { i.value = ''; });
+    } else {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    }
+  }).catch(function () {
+    btn.textContent = 'Try again';
+    btn.disabled = false;
+  });
 }
 
 // FEATURED WORK CAROUSEL -- center + peek pattern (home)

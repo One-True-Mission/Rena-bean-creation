@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rena Bean Creations | Longarm Quilting &amp; Memory Quilts</title>
   <meta name="description" content="Longarm quilting, memory quilts, and t-shirt keepsakes by Rena Bean Creations in Weatherford, Texas. Mail-in welcome nationwide.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rena Bean Creations">
+  <meta property="og:title" content="Rena Bean Creations | Longarm Quilting &amp; Memory Quilts">
+  <meta property="og:description" content="Longarm quilting, memory quilts, and t-shirt keepsakes by Rena Bean Creations in Weatherford, Texas. Mail-in welcome nationwide.">
+  <meta property="og:url" content="https://renabeancreations.com/">
+  <meta property="og:image" content="https://renabeancreations.com/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rena Bean Creations | Longarm Quilting &amp; Memory Quilts">
+  <meta name="twitter:description" content="Longarm quilting, memory quilts, and t-shirt keepsakes by Rena Bean Creations in Weatherford, Texas. Mail-in welcome nationwide.">
+  <meta name="twitter:image" content="https://renabeancreations.com/assets/og-image.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
@@ -281,7 +291,11 @@
         <h3>Quilting Classes with Rena</h3>
         <p>Join the waitlist and be the first to know when Rena opens registration for her next quilting class.</p>
       </div>
-      <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xykakgzj" method="POST" onsubmit="submitWaitlist(event)">
+      <form class="signup-form waitlist-form" id="waitlistForm" action="https://formspree.io/f/xykakgzj" method="POST" onsubmit="submitWaitlist(event)">
+        <div class="signup-row">
+          <input type="text" name="first_name" placeholder="First name" required>
+          <input type="text" name="last_name" placeholder="Last name" required>
+        </div>
         <input type="email" name="email" placeholder="Your email address" required>
         <input type="hidden" name="_subject" value="New class waitlist signup from Rena Bean Creations site">
         <input type="hidden" name="signup_type" value="Class Waitlist">
@@ -298,7 +312,11 @@
         <h3>Monthly Comfort in Stitches</h3>
         <p>Quilting tips, new creations, and community warmth delivered to your inbox once a month.</p>
       </div>
-      <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/mdavebrn" method="POST" onsubmit="submitNewsletter(event)">
+      <form class="signup-form newsletter-form" id="newsletterForm" action="https://formspree.io/f/mdavebrn" method="POST" onsubmit="submitNewsletter(event)">
+        <div class="signup-row">
+          <input type="text" name="first_name" placeholder="First name" required>
+          <input type="text" name="last_name" placeholder="Last name" required>
+        </div>
         <input type="email" name="email" placeholder="Your email address" required>
         <input type="hidden" name="_subject" value="New newsletter signup from Rena Bean Creations site">
         <input type="hidden" name="signup_type" value="Newsletter">
