@@ -151,7 +151,7 @@ function submitWaitlist(e) {
     headers: { 'Accept': 'application/json' }
   }).then(function (res) {
     if (res.ok) {
-      btn.textContent = 'You are on the list!';
+      btn.textContent = 'Spot requested!';
       btn.style.background = '#1E7D3C';
       form.querySelectorAll('input:not([type="hidden"])').forEach(function (i) { i.value = ''; });
     } else {
