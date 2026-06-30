@@ -21,16 +21,13 @@
   <link rel="stylesheet" href="style.css">
   <style>
     /* CLASS ANNOUNCEMENT BANNER (home) */
-    #class-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 101; display: flex; align-items: center; justify-content: center; gap: 1rem; background: linear-gradient(90deg, var(--red), var(--red-light)); color: #fff; padding: 0.5rem 3.2rem 0.5rem 1.5rem; font-size: 0.8rem; letter-spacing: 0.04em; text-align: center; box-shadow: 0 2px 12px rgba(40,30,18,0.18); }
+    #class-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 101; display: flex; align-items: center; justify-content: center; gap: 1rem; background: linear-gradient(90deg, var(--red), var(--red-light)); color: #fff; padding: 0.5rem 1.5rem; font-size: 0.8rem; letter-spacing: 0.04em; text-align: center; box-shadow: 0 2px 12px rgba(40,30,18,0.18); }
     #class-banner .cb-text { font-weight: 600; }
     #class-banner .cb-text strong { color: var(--yellow-light); font-weight: 700; }
     #class-banner .cb-btn { background: var(--yellow); color: var(--red); padding: 0.32rem 1rem; border-radius: 8px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
     #class-banner .cb-btn:hover { background: var(--yellow-light); }
-    #class-banner .cb-close { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: rgba(255,255,255,0.8); font-size: 1rem; cursor: none; line-height: 1; padding: 0.2rem; }
-    #class-banner .cb-close:hover { color: #fff; }
-    #class-banner.cb-hide { display: none; }
-    body[data-page="home"] nav#main-nav { top: 40px; }
-    body.cb-dismissed nav#main-nav { top: 0; }
+    body[data-page="home"] nav#main-nav { top: var(--banner-h, 44px); }
+    body[data-page="home"] .hero { padding-top: calc(6rem + var(--banner-h, 44px)); }
 
     /* UPCOMING CLASSES (home) */
     #classes { scroll-margin-top: 130px; }
@@ -65,17 +62,17 @@
       .class-form { flex-direction: column; }
       .class-form input[type="text"], .class-form input[type="email"], .class-form button { width: 100%; flex: none; }
     }
+    @media (max-width: 900px) {
+      body[data-page="home"] .hero { padding-top: calc(6.5rem + var(--banner-h, 44px)); }
+    }
     @media (max-width: 700px) {
       .class-meta { grid-template-columns: 1fr; }
       .class-pattern { flex-direction: column; align-items: flex-start; }
       .class-pattern-btn { width: 100%; text-align: center; }
     }
     @media (max-width: 600px) {
-      #class-banner { font-size: 0.72rem; gap: 0.6rem; padding: 0.45rem 2.3rem 0.45rem 0.8rem; }
+      #class-banner { font-size: 0.72rem; gap: 0.6rem; padding: 0.45rem 1rem; }
       #class-banner .cb-btn { padding: 0.28rem 0.7rem; font-size: 0.66rem; }
-      body[data-page="home"] nav#main-nav { top: 52px; }
-      body.cb-dismissed nav#main-nav { top: 0; }
-      body[data-page="home"] .hero { padding-top: 8rem; }
     }
   </style>
 </head>
@@ -85,7 +82,6 @@
   <div id="class-banner">
     <span class="cb-text"><strong>New class starting July 8</strong> &middot; Evergreen Quilt Class with Rena</span>
     <a href="#classes" class="cb-btn">View Class</a>
-    <button class="cb-close" onclick="dismissClassBanner()" aria-label="Dismiss announcement">&#10005;</button>
   </div>
 
   <div id="progress-bar"></div>
@@ -454,11 +450,16 @@
   </footer>
 
   <script>
-    function dismissClassBanner() {
-      var b = document.getElementById('class-banner');
-      if (b) b.classList.add('cb-hide');
-      document.body.classList.add('cb-dismissed');
-    }
+    (function () {
+      var banner = document.getElementById('class-banner');
+      if (!banner) return;
+      function setBannerHeight() {
+        document.documentElement.style.setProperty('--banner-h', banner.offsetHeight + 'px');
+      }
+      setBannerHeight();
+      window.addEventListener('resize', setBannerHeight);
+      window.addEventListener('load', setBannerHeight);
+    })();
   </script>
   <script src="script.js"></script>
 </body>
