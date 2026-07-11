@@ -9,6 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* CONTACT PAGE (page-specific) */
+    .review-card { display: flex; align-items: flex-start; gap: 1.2rem; margin-top: 2rem; background: var(--green-glow); border: 1px solid var(--green); border-left: 4px solid var(--green); border-radius: 12px; padding: 1.5rem 1.7rem; }
+    .review-card-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1.2; }
+    .review-card-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--green); margin-bottom: 0.4rem; }
+    .review-card-info p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; margin-bottom: 1rem; }
+    .review-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--green); color: #fff; padding: 0.7rem 1.5rem; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; cursor: none; transition: background 0.2s, transform 0.15s; box-shadow: 0 2px 12px var(--green-glow); }
+    .review-btn:hover { background: #166130; transform: translateY(-1px); }
+  </style>
 </head>
 <body data-page="contact">
 
@@ -114,6 +123,14 @@
             <a href="https://www.google.com/maps/search/?api=1&amp;query=AIM+Mail+Center+220+Adams+Dr+%23280+Weatherford+TX+76086" target="_blank" rel="noopener" class="dropoff-link">Get Directions &#8594;</a>
           </div>
         </div>
+        <div class="review-card">
+          <div class="review-card-icon">&#11088;</div>
+          <div class="review-card-info">
+            <h4>Loved Working With Rena?</h4>
+            <p>Reviews mean the world to a small business and help other quilters find Rena. If she made something special for you, a quick review on Google would be so appreciated.</p>
+            <a href="https://g.page/r/CZgKQ-vSOl6mEBM/review" target="_blank" rel="noopener" class="review-btn">Leave a Review &#8594;</a>
+          </div>
+        </div>
       </div>
       <div class="reveal reveal-delay-1">
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvjkvpq" method="POST">
@@ -148,6 +165,7 @@
               <option>T-Shirt Memory Quilt</option>
               <option>Novelty T-Shirt Order</option>
               <option>Class Waitlist</option>
+              <option>Newsletter Sign-Up</option>
               <option>General Question</option>
             </select>
           </div>
