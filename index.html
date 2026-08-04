@@ -58,6 +58,12 @@
     .class-form button:hover { background: var(--red-light); transform: translateY(-1px); }
     .class-signup-call { font-size: 0.82rem; color: var(--text-muted); font-weight: 300; margin-top: 0.9rem; }
     .class-signup-call a { color: var(--red); font-weight: 600; text-decoration: none; }
+    .class-designs { margin-top: 2rem; padding-top: 1.6rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap; }
+    .class-designs-text { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; line-height: 1.6; flex: 1; min-width: 240px; }
+    .class-designs-text strong { display: block; color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.15rem; }
+    .class-designs-btn { flex-shrink: 0; display: inline-flex; align-items: center; gap: 0.5rem; background: var(--green); color: #fff; padding: 0.7rem 1.5rem; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; cursor: none; transition: background 0.2s, transform 0.15s; box-shadow: 0 2px 12px var(--green-glow); white-space: nowrap; }
+    .class-designs-btn:hover { background: #166130; transform: translateY(-1px); }
+    @media (max-width: 560px) { .class-designs-btn { width: 100%; justify-content: center; } }
     @media (max-width: 700px) {
       .class-form { flex-direction: column; }
       .class-form input[type="text"], .class-form input[type="email"], .class-form button { width: 100%; flex: none; }
@@ -292,6 +298,14 @@
           </div>
         </div>
       </article>
+    </div>
+
+    <div class="class-designs reveal">
+      <div class="class-designs-text">
+        <strong>Curious about quilt designs?</strong>
+        Rena draws many of her patterns and designs from Urban Elementz. Browse their collection to get a feel for the styles she can bring to life.
+      </div>
+      <a href="https://www.urbanelementz.com" target="_blank" rel="noopener noreferrer" class="class-designs-btn">Browse More Designs &#8594;</a>
     </div>
   </section>
 
