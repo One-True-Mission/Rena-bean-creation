@@ -5,10 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Rena Bean Creations</title>
   <meta name="description" content="Longarm quilting, memory quilts, t-shirt quilts, and finishing add-ons including binding, batting, backing piecing, and rush orders. Mail-in welcome nationwide.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rena Bean Creations">
+  <meta property="og:title" content="Services | Rena Bean Creations">
+  <meta property="og:description" content="Longarm quilting, memory quilts, t-shirt quilts, and finishing add-ons including binding, batting, backing piecing, and rush orders. Mail-in welcome nationwide.">
+  <meta property="og:url" content="https://renabeancreations.com/services.html">
+  <meta property="og:image" content="https://renabeancreations.com/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Services | Rena Bean Creations">
+  <meta name="twitter:description" content="Longarm quilting, memory quilts, t-shirt quilts, and finishing add-ons including binding, batting, backing piecing, and rush orders. Mail-in welcome nationwide.">
+  <meta name="twitter:image" content="https://renabeancreations.com/assets/og-image.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* SERVICES PAGE (page-specific) */
+    .designs-row { margin-top: 2.2rem; padding-top: 1.8rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .designs-row-text { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; line-height: 1.6; flex: 1; min-width: 240px; }
+    .designs-row-text strong { display: block; color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.15rem; }
+    .designs-row-btn { flex-shrink: 0; display: inline-flex; align-items: center; gap: 0.5rem; background: var(--green); color: #fff; padding: 0.75rem 1.6rem; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; cursor: none; transition: background 0.2s, transform 0.15s; box-shadow: 0 2px 12px var(--green-glow); white-space: nowrap; }
+    .designs-row-btn:hover { background: #166130; transform: translateY(-1px); }
+    @media (max-width: 560px) { .designs-row-btn { width: 100%; justify-content: center; } }
+  </style>
 </head>
 <body data-page="services">
 
@@ -72,6 +91,8 @@
     </div>
   </div>
 
+  <main>
+
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="page-hero-grid"></div>
@@ -121,6 +142,14 @@
         <div class="service-card-number">03</div>
       </div>
     </div>
+
+    <div class="designs-row reveal">
+      <div class="designs-row-text">
+        <strong>Picking a quilting design?</strong>
+        Rena works with patterns and designs from Urban Elementz. Browse their collection, then tell her which design you would like on your quote.
+      </div>
+      <a href="https://www.urbanelementz.com" target="_blank" rel="noopener noreferrer" class="designs-row-btn">Browse Designs &#8594;</a>
+    </div>
   </section>
 
   <!-- PRICING -->
@@ -131,16 +160,19 @@
     <div class="pricing-grid">
       <div class="pricing-formula-card reveal">
         <h3>How Pricing Works</h3>
-        <p>Longarm quilting is just $0.15 per square inch. Measure your quilt's width and length in inches, multiply them together to get the total square inches, then multiply by $0.15.</p>
+        <p>Standard computerized longarm quilting is just 1.5 cents ($0.015) per square inch, and that includes thread and trimming. Measure your quilt's width and length in inches, multiply them together to get the total square inches, then multiply by $0.015.</p>
         <div class="pricing-example">
           <span>Example</span>
           50 in wide &times; 80 in long = 4,000 sq in<br>
-          4,000 &times; $0.15 = <strong>$60.00</strong>
+          4,000 &times; $0.015 = <strong>$60.00</strong>
         </div>
         <ul class="pricing-extras">
+          <li><span>Rush orders (front of the line)</span><span>2 cents / sq in</span></li>
+          <li><span>Custom quilting</span><span>$25 / hour</span></li>
+          <li><span>Small quilts (under 40 in either side)</span><span>$25 flat</span></li>
           <li><span>Add-ons (binding, etc.)</span><span>$25 / hour</span></li>
           <li><span>Batting</span><span>$12 / yard</span></li>
-          <li><span>Turnaround</span><span>About 2 weeks</span></li>
+          <li><span>Turnaround</span><span>About 2 to 3 weeks</span></li>
         </ul>
       </div>
       <div class="pricing-calc-card reveal reveal-delay-1">
@@ -154,7 +186,7 @@
         <div class="pricing-result">Estimated longarm quilting
           <strong id="pres">$0.00</strong>
         </div>
-        <p class="pricing-disclaimer">This estimate covers longarm quilting only. Add-ons like binding are an additional $25 per hour. Reach out for an exact quote on your project.</p>
+        <p class="pricing-disclaimer">This estimate covers standard computerized longarm quilting only, at 1.5 cents per square inch. Quilts under 40 inches on either side are a $25 flat rate. Rush orders are 2 cents per square inch and custom quilting is $25 per hour. Add-ons like binding are an additional $25 per hour. Reach out for an exact quote on your project.</p>
       </div>
     </div>
   </section>
@@ -315,6 +347,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-top">
@@ -360,7 +394,9 @@
       if (!w || !l || !out) return;
       function calc() {
         var ww = parseFloat(w.value) || 0, ll = parseFloat(l.value) || 0;
-        var total = ww * ll * 0.15;
+        var total = ww * ll * 0.015;
+        // Quilts under 40 inches on either side are a $25 flat rate
+        if (ww > 0 && ll > 0 && (ww < 40 || ll < 40) && total < 25) total = 25;
         out.textContent = '$' + total.toFixed(2);
       }
       w.addEventListener('input', calc);
