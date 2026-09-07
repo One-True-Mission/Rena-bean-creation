@@ -710,6 +710,9 @@ nav .hamburger span { background: var(--red); }
 }
 
 
+/* HONEYPOT SPAM TRAP -- hidden from people, filled by bots, rejected by Formspree */
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+
 /* OTM FOOTER CREDIT -- always brand contrast, never muted gray */
 .footer-bottom-links a[href*="otm-designs"] { color: var(--red); font-weight: 600; }
 .footer-bottom-links a[href*="otm-designs"]:hover { color: var(--red-light); }
